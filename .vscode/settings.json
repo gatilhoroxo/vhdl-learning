@@ -1,0 +1,52 @@
+{
+  // --- Configurações Gerais do Editor ---
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "boundary",
+    // Ajuda a manter o limite de caracteres por linha no hardware
+  "editor.rulers": [80], 
+
+  // --- Configurações por Linguagem ---
+
+  // VHDL (Sua linguagem principal)
+  "[vhdl]": {
+    "editor.suggestSelection": "first",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+
+  // Markdown (Documentação de relatórios/projetos)
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.renderWhitespace": "none",
+    "editor.acceptSuggestionOnEnter": "off",
+    // Abre o preview automaticamente ao lado se preferir (opcional)
+    "markdown.preview.autoOpenPreviewToTheSide": false 
+  },
+
+  // Verilog e SystemVerilog (Para comparação)
+  "[verilog]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": false // Evita formatações agressivas automáticas em códigos secundários
+  },
+  "[systemverilog]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": false
+  },
+
+  // --- Integração com GHDL ---
+  "vhdl.linter": "ghdl",
+  "vhdl.ghdlPath": "ghdl" // Substitua por "/caminho/completo/ate/bin/ghdl" se não estiver no PATH global
+
+}

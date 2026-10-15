@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    // Suporte completo a VHDL (Sintaxe, linting e navegação)
+    "pugh.vhdwhdl",
+    // Excelente para Verilog e SystemVerilog
+    "mshr-h.veriloghdl",
+    // Produtividade máxima para escrever em Markdown
+    "yzhang.markdown-all-in-one"
+  ]
+}

@@ -1,0 +1,61 @@
+/*
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "GHDL: Analisar Arquivo Atual",
+      "type": "shell",
+      "command": "ghdl", // Use o caminho completo se necessário
+      "args": [
+        "-a",
+        "--std=08", // Define o padrão VHDL-2008 (mude para 93 ou 02 se preferir)
+        "${file}"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "GHDL: Elaborar e Executar Simulação",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-e",
+        "--std=08",
+        "nome_do_seu_testbench" // <-- Substitua pelo nome da sua entidade Testbench
+      ],
+      "dependsOn": [
+        "GHDL: Analisar Arquivo Atual"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "options": {
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-c"]
+        }
+      },
+      // "postLaunchTask": "GHDL: Rodar Simulação VCD"
+    },
+    {
+      "label": "GHDL: Rodar Simulação VCD",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-r",
+        "--std=08",
+        "nome_do_seu_testbench",
+        "--vcd=simulacao.vcd" // Gera as ondas para visualizar no GTKWave se quiser
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
+//*/
